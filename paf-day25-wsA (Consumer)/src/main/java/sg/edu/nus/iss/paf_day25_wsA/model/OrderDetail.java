@@ -4,8 +4,8 @@ public class OrderDetail {
     
     private int id;
     private String product;
-    private String unitPrice;
-    private String discount;
+    private float unitPrice;
+    private float discount;
     private int quantity;
     private int orderId;
 
@@ -13,7 +13,7 @@ public class OrderDetail {
     public OrderDetail() {
     }
 
-    public OrderDetail(int id, String product, String unitPrice, String discount, int quantity, int order_id) {
+    public OrderDetail(int id, String product, float unitPrice, float discount, int quantity, int order_id) {
         this.id = id;
         this.product = product;
         this.unitPrice = unitPrice;
@@ -42,16 +42,16 @@ public class OrderDetail {
     public void setProduct(String product) {
         this.product = product;
     }
-    public String getUnitPrice() {
+    public float getUnitPrice() {
         return unitPrice;
     }
-    public void setUnitPrice(String unitPrice) {
+    public void setUnitPrice(float unitPrice) {
         this.unitPrice = unitPrice;
     }
-    public String getDiscount() {
+    public float getDiscount() {
         return discount;
     }
-    public void setDiscount(String discount) {
+    public void setDiscount(float discount) {
         this.discount = discount;
     }
     public int getQuantity() {
@@ -66,4 +66,5 @@ public class OrderDetail {
     public void setOrderId(int order_id) {
         this.orderId = order_id;
     }
+    
 }

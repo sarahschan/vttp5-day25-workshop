@@ -4,20 +4,20 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Order {
-
+    
     private int orderId;
     private LocalDate orderDate;
     private String customerName;
     private String shipAddress;
     private String notes;
-    private String tax;
+    private float tax;
     private List<OrderDetail> orderDetails;
 
 
     public Order() {
     }
 
-    public Order(int orderId, LocalDate orderDate, String customerName, String shipAddress, String notes, String tax,
+    public Order(int orderId, LocalDate orderDate, String customerName, String shipAddress, String notes, float tax,
             List<OrderDetail> orderDetails) {
         this.orderId = orderId;
         this.orderDate = orderDate;
@@ -65,10 +65,10 @@ public class Order {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-    public String getTax() {
+    public float getTax() {
         return tax;
     }
-    public void setTax(String tax) {
+    public void setTax(float tax) {
         this.tax = tax;
     }
     public List<OrderDetail> getOrderDetails() {
