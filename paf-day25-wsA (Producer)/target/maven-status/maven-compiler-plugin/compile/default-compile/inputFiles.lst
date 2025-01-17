@@ -5,5 +5,7 @@
 /Users/sarahchan/Desktop/NUS/03 - Persistance & Analytics/day25/workshops/assigned/paf-day25-wsA (Producer)/src/main/java/sg/edu/nus/iss/paf_day25_wsA/controller/OrderController.java
 /Users/sarahchan/Desktop/NUS/03 - Persistance & Analytics/day25/workshops/assigned/paf-day25-wsA (Producer)/src/main/java/sg/edu/nus/iss/paf_day25_wsA/model/Order.java
 /Users/sarahchan/Desktop/NUS/03 - Persistance & Analytics/day25/workshops/assigned/paf-day25-wsA (Producer)/src/main/java/sg/edu/nus/iss/paf_day25_wsA/model/OrderDetail.java
-/Users/sarahchan/Desktop/NUS/03 - Persistance & Analytics/day25/workshops/assigned/paf-day25-wsA (Producer)/src/main/java/sg/edu/nus/iss/paf_day25_wsA/service/OrderService.java
+/Users/sarahchan/Desktop/NUS/03 - Persistance & Analytics/day25/workshops/assigned/paf-day25-wsA (Producer)/src/main/java/sg/edu/nus/iss/paf_day25_wsA/repo/RedisRepo.java
 /Users/sarahchan/Desktop/NUS/03 - Persistance & Analytics/day25/workshops/assigned/paf-day25-wsA (Producer)/src/main/java/sg/edu/nus/iss/paf_day25_wsA/service/RedisService.java
+/Users/sarahchan/Desktop/NUS/03 - Persistance & Analytics/day25/workshops/assigned/paf-day25-wsA (Producer)/src/main/java/sg/edu/nus/iss/paf_day25_wsA/util/JsonSerializer.java
+/Users/sarahchan/Desktop/NUS/03 - Persistance & Analytics/day25/workshops/assigned/paf-day25-wsA (Producer)/src/main/java/sg/edu/nus/iss/paf_day25_wsA/util/OrderUtil.java

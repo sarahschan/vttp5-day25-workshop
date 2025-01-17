@@ -17,7 +17,7 @@ public class AppStartupRunner implements CommandLineRunner {
     private ConfigurableEnvironment environment;
 
     @Autowired
-    @Qualifier("registrations")
+    @Qualifier("order")
     RedisTemplate<String, String> redisTemplate;
 
     private String defaultName = "default";

@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import sg.edu.nus.iss.paf_day25_wsA.model.Order;
-import sg.edu.nus.iss.paf_day25_wsA.service.OrderService;
 import sg.edu.nus.iss.paf_day25_wsA.service.RedisService;
 import sg.edu.nus.iss.paf_day25_wsA.util.JsonSerializer;
+import sg.edu.nus.iss.paf_day25_wsA.util.OrderUtil;
 
 @Controller
 @RequestMapping("/order")
@@ -24,7 +24,7 @@ public class OrderController {
     RedisService redisService;
 
     @Autowired
-    OrderService orderService;
+    OrderUtil orderUtil;
 
     @Autowired
     JsonSerializer jsonSerializer;
@@ -32,10 +32,7 @@ public class OrderController {
     @GetMapping("")
     public String showOrderForm(Model model){
 
-        List<String> customerNames = redisService.retrieveAppNames();
-        for (String name : customerNames) {
-            System.out.println(name);
-        }
+        List<String> customerNames = redisService.retrieveAppNames("registrations");
         model.addAttribute("customerNames", customerNames);
 
         return "order";
@@ -45,7 +42,7 @@ public class OrderController {
     @PostMapping("")
     public String processOrder(@RequestParam MultiValueMap<String, String> data, Model model){
         
-        Order order = orderService.createOrder(data);
+        Order order = orderUtil.createOrder(data);
         String orderJson = jsonSerializer.pojoToJson(order);
 
         redisService.saveOrderToRedis(orderJson);

@@ -4,35 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.stereotype.Service;
+
+import sg.edu.nus.iss.paf_day25_wsA.repo.RedisRepo;
 
 @Service
 public class RedisService {
     
     @Autowired
-    @Qualifier("registrations")
-    RedisTemplate<String, String> redisTemplate;
+    RedisRepo redisRepo;
 
-    @Value("${customer.name}")
-    private String customerName;
+    @Autowired
+    ConfigurableEnvironment environment;
 
-
-    public void sendOrder(String orderJsonString){
-        redisTemplate.convertAndSend(customerName, orderJsonString);
-    }
-
-
-    public List<String> retrieveAppNames() {
-        List<String> customerNames = redisTemplate.opsForList().range("registrations", 0, -1);
+    public List<String> retrieveAppNames(String key) {
+        List<String> customerNames = redisRepo.getList(key);
         return new ArrayList<>(customerNames);
     }
 
 
     public void saveOrderToRedis(String order) {
-        redisTemplate.opsForList().rightPush(customerName, order);
+        String customerName = environment.getProperty("customer.name");
+        redisRepo.saveKeyAndValue(customerName, order);
+        System.out.println("Saved to redis - Order from customer " + customerName);
     }
 
 }

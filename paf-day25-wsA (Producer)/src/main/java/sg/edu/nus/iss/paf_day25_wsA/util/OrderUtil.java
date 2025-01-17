@@ -1,4 +1,4 @@
-package sg.edu.nus.iss.paf_day25_wsA.service;
+package sg.edu.nus.iss.paf_day25_wsA.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import sg.edu.nus.iss.paf_day25_wsA.model.Order;
 import sg.edu.nus.iss.paf_day25_wsA.model.OrderDetail;
 
 @Service
-public class OrderService {
+public class OrderUtil {
     
     public Order createOrder(MultiValueMap<String, String> data) {
         
